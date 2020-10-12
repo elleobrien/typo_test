@@ -43,9 +43,9 @@ interesting_cases.sort(key=lambda tup:tup[2], reverse=True)
 to_report = interesting_cases[:5]
 df = pd.DataFrame(to_report, columns = ["Original","Perturbed","Sq. Score Diff"])
 with open("failure_modes.txt","w") as outfile:
-    outfile.write(df.to_markdown())
-
+    outfile.write(df.to_markdown(index=False))
+    
 # Write results to file
-with open("perturbation_test.json", 'w') as outfile:
+with open("test_score.json", 'w') as outfile:
         json.dump({ "accuracy": total_acc, "mse":mse}, outfile)
 

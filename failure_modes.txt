@@ -1,7 +1,7 @@
 |    | Original                                                                                 | Perturbed                                                                                |   Sq. Score Diff |
 |---:|:-----------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------|-----------------:|
-|  0 | Carter itself seems like a really good, respectable dealer.                              | Carter itselT qeems like a really food, respectable dealer.                              |         0.243947 |
-|  1 | It was amazing and they have great inventory.                                            | It was Qmazing and they have grea% inventory.                                            |         0.242126 |
-|  2 | It was very refreshing, no nonsense, just facts.                                         | It was very refreEhing, no nonsensf, just faFts.                                         |         0.22769  |
-|  3 | One of the best customer service experiences I've ever had!                              | One of the gest cust8mer service experiegces I ' ve ever had!                            |         0.225667 |
-|  4 | I have now bought 2 vehicles from them and I have had excellant customer service always. | I have now bought 2 vehicles from them and I hage had exce>lant cusyomer service always. |         0.216526 |
+|  0 | It looks freshly clean.                                                                  | It looks fr4shly clean.                                                                  |         0.24423  |
+|  1 | Huge waste of money.                                                                     | Huge wqste of money.                                                                     |         0.236712 |
+|  2 | Great experience.                                                                        | freat experience.                                                                        |         0.230122 |
+|  3 | I have now bought 2 vehicles from them and I have had excellant customer service always. | I have now bought 2 vehicles froN them and I hav4 had excellant customer service aOways. |         0.216848 |
+|  4 | I went in last week to check out a car I have been wanting for a year now!               | I wenY in last weFk to cGeck out a car I have been wanting for a year now!               |         0.20668  |
