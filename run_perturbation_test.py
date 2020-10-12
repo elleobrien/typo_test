@@ -9,7 +9,7 @@ inference_model = AutoModelForSequenceClassification.from_pretrained("textattack
 model = pipeline("sentiment-analysis", model = inference_model,tokenizer=tokenizer)
 
 # Define text perturbation
-aug = nac.KeyboardAug(aug_word_max=3, aug_char_p=0.05) # Insert realistic keystroke errors
+aug = nac.KeyboardAug(aug_word_max=1) # Insert realistic keystroke errors
 def typo(input):
     output = aug.augment(input)
     return(output)
