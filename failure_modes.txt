@@ -1,0 +1,7 @@
+|    | Original                                                                                 | Perturbed                                                                                |   Sq. Score Diff |
+|---:|:-----------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------|-----------------:|
+|  0 | Carter itself seems like a really good, respectable dealer.                              | Carter itselT qeems like a really food, respectable dealer.                              |         0.243947 |
+|  1 | It was amazing and they have great inventory.                                            | It was Qmazing and they have grea% inventory.                                            |         0.242126 |
+|  2 | It was very refreshing, no nonsense, just facts.                                         | It was very refreEhing, no nonsensf, just faFts.                                         |         0.22769  |
+|  3 | One of the best customer service experiences I've ever had!                              | One of the gest cust8mer service experiegces I ' ve ever had!                            |         0.225667 |
+|  4 | I have now bought 2 vehicles from them and I have had excellant customer service always. | I have now bought 2 vehicles from them and I hage had exce>lant cusyomer service always. |         0.216526 |

@@ -1,12 +1,15 @@
-from transformers import pipeline, AutoTokenizer
+from transformers import pipeline, AutoModelForSequenceClassification, AutoTokenizer
 import nlpaug.augmenter.char as nac
 import json
+import pandas as pd
 
 # Load model 
-model = pipeline("sentiment-analysis",model="bert-base-uncased")
+tokenizer = AutoTokenizer.from_pretrained("textattack/albert-base-v2-SST-2")
+inference_model = AutoModelForSequenceClassification.from_pretrained("textattack/albert-base-v2-SST-2")
+model = pipeline("sentiment-analysis", model = inference_model,tokenizer=tokenizer)
 
 # Define text perturbation
-aug = nac.KeyboardAug() # Insert realistic keystroke errors
+aug = nac.KeyboardAug(aug_word_max=3, aug_char_p=0.05) # Insert realistic keystroke errors
 def typo(input):
     output = aug.augment(input)
     return(output)
@@ -25,10 +28,22 @@ test_dataset = f.read().split("\t")[:-1]
 # Loop over all test examples and evaluate
 mse, total_acc = 0,0
 n = len(test_dataset)
+interesting_cases = []
 for sentence in test_dataset:
-    sq_error, acc = eval_perturb(sentence, typo(sentence))
+    sentence_mod = typo(sentence)
+    sq_error, acc = eval_perturb(sentence, sentence_mod)
     mse += (1/n) * sq_error
     total_acc += (1/n) * acc
+    if acc == False:
+        interesting_cases.append((sentence,sentence_mod,sq_error))
+
+interesting_cases.sort(key=lambda tup:tup[2], reverse=True)
+
+# Write out our favorite interesting cases
+to_report = interesting_cases[:5]
+df = pd.DataFrame(to_report, columns = ["Original","Perturbed","Sq. Score Diff"])
+with open("failure_modes.txt","w") as outfile:
+    outfile.write(df.to_markdown())
 
 # Write results to file
 with open("perturbation_test.json", 'w') as outfile:
