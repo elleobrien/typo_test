@@ -3,7 +3,7 @@ import nlpaug.augmenter.char as nac
 import json
 
 # Load model 
-model = pipeline("sentiment-analysis",model="distilbert-base-uncased")
+model = pipeline("sentiment-analysis",model="bert-base-uncased")
 
 # Define text perturbation
 aug = nac.KeyboardAug() # Insert realistic keystroke errors
