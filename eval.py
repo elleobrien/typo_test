@@ -3,7 +3,7 @@ import nlpaug.augmenter.char as nac
 import json
 
 # Load model 
-model = pipeline("sentiment-analysis",model="bert-base-uncased")
+model = pipeline("sentiment-analysis",model="distilbert-base-uncased")
 
 # Define text perturbation
 aug = nac.KeyboardAug() # Insert realistic keystroke errors
@@ -31,6 +31,6 @@ for sentence in test_dataset:
     total_acc += (1/n) * acc
 
 # Write results to file
-with open("perturbaton_test.json", 'w') as outfile:
+with open("perturbation_test.json", 'w') as outfile:
         json.dump({ "accuracy": total_acc, "mse":mse}, outfile)
 
