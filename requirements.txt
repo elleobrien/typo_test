@@ -2,3 +2,4 @@ transformers
 nlpaug
 pandas
 torch
+tabulate
