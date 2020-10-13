@@ -4,8 +4,8 @@ import json
 import pandas as pd
 
 # Load model 
-tokenizer = AutoTokenizer.from_pretrained("textattack/albert-base-v2-SST-2")
-inference_model = AutoModelForSequenceClassification.from_pretrained("textattack/albert-base-v2-SST-2")
+tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased-finetuned-sst-2-english")
+inference_model = AutoModelForSequenceClassification.from_pretrained("distilbert-base-uncased-finetuned-sst-2-english")
 model = pipeline("sentiment-analysis", model = inference_model,tokenizer=tokenizer)
 
 # Define text perturbation
