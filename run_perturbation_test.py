@@ -49,3 +49,5 @@ with open("failure_modes.txt","w") as outfile:
 with open("test_score.json", 'w') as outfile:
         json.dump({ "accuracy": total_acc, "mse":mse}, outfile)
 
+
+        
