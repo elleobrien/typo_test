@@ -3,3 +3,6 @@ nlpaug
 pandas
 torch
 tabulate
+nltk
+sentencepiece
+protobuf
