@@ -15,6 +15,7 @@ def typo(input):
     return(output)
 
 def eval_perturb(input_a,input_b):
+    input_b = input_b[0]
     output_a, output_b = model([input_a, input_b])
     sq_error = (output_a["score"] - output_b["score"])**2
     acc = output_a["label"] == output_b["label"]
